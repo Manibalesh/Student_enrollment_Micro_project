@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: #1f2937;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #374151;
+}
+
+label span {
+    color: #dc2626;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+input:disabled, textarea:disabled {
+    background: #eef2f7;
+    cursor: not-allowed;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+button {
+    border: 0;
+    border-radius: 7px;
+    padding: 11px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.save { background: #16a34a; color: white; }
+.update { background: #2563eb; color: white; }
+.reset { background: #6b7280; color: white; }
+
+.message {
+    display: none;
+    margin-bottom: 18px;
+    padding: 10px 14px;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.message.success {
+    display: block;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.message.error {
+    display: block;
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 650px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
